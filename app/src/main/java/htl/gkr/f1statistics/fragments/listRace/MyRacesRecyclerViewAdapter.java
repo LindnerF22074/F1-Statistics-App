@@ -6,20 +6,16 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import htl.gkr.f1statistics.objects.Race.PlaceholderItem;
 import htl.gkr.f1statistics.databinding.FragmentRacesBinding;
+import htl.gkr.f1statistics.objects.Race;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class MyRacesRecyclerViewAdapter extends RecyclerView.Adapter<MyRacesRecyclerViewAdapter.ViewHolder> {
 
-    private final List<PlaceholderItem> mValues;
+    private final List<Race> mValues;
 
-    public MyRacesRecyclerViewAdapter(List<PlaceholderItem> items) {
+    public MyRacesRecyclerViewAdapter(List<Race> items) {
         mValues = items;
     }
 
@@ -33,8 +29,7 @@ public class MyRacesRecyclerViewAdapter extends RecyclerView.Adapter<MyRacesRecy
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mContentView.setText(mValues.get(position).getRaceName());
     }
 
     @Override
@@ -43,14 +38,13 @@ public class MyRacesRecyclerViewAdapter extends RecyclerView.Adapter<MyRacesRecy
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
         public final TextView mContentView;
-        public PlaceholderItem mItem;
+        public Race mItem;
 
         public ViewHolder(FragmentRacesBinding binding) {
             super(binding.getRoot());
-            mIdView = binding.itemNumber;
-            mContentView = binding.content;
+
+            mContentView = binding.textViewName;
         }
 
         @Override

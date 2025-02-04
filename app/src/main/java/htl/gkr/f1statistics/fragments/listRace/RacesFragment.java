@@ -65,7 +65,7 @@ public class RacesFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyRacesRecyclerViewAdapter(Race.ITEMS));
+            recyclerView.setAdapter(new MyRacesRecyclerViewAdapter(Race.RACES));
         }
         return view;
     }

@@ -41,4 +41,8 @@ public class Race {
             }
         });
     }
+
+    public String getRaceName() {
+        return raceName;
+    }
 }

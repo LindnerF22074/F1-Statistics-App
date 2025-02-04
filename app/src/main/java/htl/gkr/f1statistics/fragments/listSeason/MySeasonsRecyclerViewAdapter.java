@@ -6,20 +6,17 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import htl.gkr.f1statistics.objects.Season.PlaceholderItem;
 import htl.gkr.f1statistics.databinding.FragmentSeasonsBinding;
+import htl.gkr.f1statistics.objects.Season;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
- * TODO: Replace the implementation with code for your data type.
- */
+
 public class MySeasonsRecyclerViewAdapter extends RecyclerView.Adapter<MySeasonsRecyclerViewAdapter.ViewHolder> {
 
-    private final List<PlaceholderItem> mValues;
+    private final List<Season> mValues;
 
-    public MySeasonsRecyclerViewAdapter(List<PlaceholderItem> items) {
+    public MySeasonsRecyclerViewAdapter(List<Season> items) {
         mValues = items;
     }
 
@@ -33,8 +30,7 @@ public class MySeasonsRecyclerViewAdapter extends RecyclerView.Adapter<MySeasons
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mContentView.setText(mValues.get(position).getSeasonYear());
     }
 
     @Override
@@ -43,13 +39,11 @@ public class MySeasonsRecyclerViewAdapter extends RecyclerView.Adapter<MySeasons
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
         public final TextView mContentView;
-        public PlaceholderItem mItem;
+        public Season mItem;
 
         public ViewHolder(FragmentSeasonsBinding binding) {
             super(binding.getRoot());
-            mIdView = binding.textViewYear;
             mContentView = binding.textViewYear;
         }
 

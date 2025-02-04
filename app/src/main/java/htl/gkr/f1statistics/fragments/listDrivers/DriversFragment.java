@@ -65,7 +65,7 @@ public class DriversFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyDriversRecyclerViewAdapter(Driver.ITEMS));
+            recyclerView.setAdapter(new MyDriversRecyclerViewAdapter(Driver.DRIVERS));
         }
         return view;
     }

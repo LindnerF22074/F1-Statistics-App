@@ -11,4 +11,7 @@ public class Season {
     private int seasonId;
     private int year;
 
+    public int getSeasonYear() {
+        return year;
+    }
 }

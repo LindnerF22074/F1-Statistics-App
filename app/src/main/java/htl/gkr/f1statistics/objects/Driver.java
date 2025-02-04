@@ -43,4 +43,8 @@ public class Driver {
             }
         });
     }
+
+    public String getDriverName() {
+        return driverName;
+    }
 }

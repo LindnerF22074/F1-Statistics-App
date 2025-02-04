@@ -65,7 +65,7 @@ public class SeasonsFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MySeasonsRecyclerViewAdapter(Season.ITEMS));
+            recyclerView.setAdapter(new MySeasonsRecyclerViewAdapter(Season.SEASONS));
         }
         return view;
     }

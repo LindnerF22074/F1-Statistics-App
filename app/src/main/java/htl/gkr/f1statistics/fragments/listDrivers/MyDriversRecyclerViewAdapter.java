@@ -6,20 +6,17 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import htl.gkr.f1statistics.objects.Driver.PlaceholderItem;
-import htl.gkr.f1statistics.databinding.FragmentDriversBinding;
-
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
- * TODO: Replace the implementation with code for your data type.
- */
+import htl.gkr.f1statistics.databinding.FragmentDriversBinding;
+import htl.gkr.f1statistics.objects.Driver;
+
+
 public class MyDriversRecyclerViewAdapter extends RecyclerView.Adapter<MyDriversRecyclerViewAdapter.ViewHolder> {
 
-    private final List<PlaceholderItem> mValues;
+    private final List<Driver> mValues;
 
-    public MyDriversRecyclerViewAdapter(List<PlaceholderItem> items) {
+    public MyDriversRecyclerViewAdapter(List<Driver> items) {
         mValues = items;
     }
 
@@ -33,8 +30,8 @@ public class MyDriversRecyclerViewAdapter extends RecyclerView.Adapter<MyDrivers
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+
+        holder.mContentView.setText(mValues.get(position).getDriverName());
     }
 
     @Override
@@ -43,14 +40,12 @@ public class MyDriversRecyclerViewAdapter extends RecyclerView.Adapter<MyDrivers
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
         public final TextView mContentView;
-        public PlaceholderItem mItem;
+        public Driver mItem;
 
         public ViewHolder(FragmentDriversBinding binding) {
             super(binding.getRoot());
-            mIdView = binding.itemNumber;
-            mContentView = binding.content;
+            mContentView = binding.textViewName2;
         }
 
         @Override
