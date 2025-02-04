@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import htl.gkr.f1statistics.R;
-import htl.gkr.f1statistics.fragments.listDrivers.placeholder.PlaceholderContent;
+import htl.gkr.f1statistics.objects.Driver;
 
 /**
  * A fragment representing a list of Items.
@@ -65,7 +65,7 @@ public class DriversFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyDriversRecyclerViewAdapter(PlaceholderContent.ITEMS));
+            recyclerView.setAdapter(new MyDriversRecyclerViewAdapter(Driver.ITEMS));
         }
         return view;
     }

@@ -9,9 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import htl.gkr.f1statistics.R;
+import htl.gkr.f1statistics.databinding.FragmentStartBinding;
 
 public class StartFragment extends Fragment {
-
+    FragmentStartBinding binding;
     public StartFragment() {
         // Required empty public constructor
     }
@@ -22,7 +23,12 @@ public class StartFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_start, container, false);
+        binding = FragmentStartBinding.inflate(inflater, container, false);
+
+
+
+
+
+        return binding.getRoot();
     }
 }

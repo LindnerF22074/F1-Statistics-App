@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import htl.gkr.f1statistics.R;
-import htl.gkr.f1statistics.fragments.listCircuits.placeholder.PlaceholderContent;
+import htl.gkr.f1statistics.objects.Circuit;
 
 /**
  * A fragment representing a list of Items.
@@ -65,7 +65,7 @@ public class CircuitsFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyCircuitsRecyclerViewAdapter(PlaceholderContent.ITEMS));
+            recyclerView.setAdapter(new MyCircuitsRecyclerViewAdapter(Circuit.CIRCUITS));
         }
         return view;
     }

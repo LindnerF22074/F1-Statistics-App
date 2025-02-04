@@ -3,11 +3,10 @@ package htl.gkr.f1statistics.fragments.listRace;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import htl.gkr.f1statistics.fragments.listRace.placeholder.PlaceholderContent.PlaceholderItem;
+import htl.gkr.f1statistics.objects.Race.PlaceholderItem;
 import htl.gkr.f1statistics.databinding.FragmentRacesBinding;
 
 import java.util.List;

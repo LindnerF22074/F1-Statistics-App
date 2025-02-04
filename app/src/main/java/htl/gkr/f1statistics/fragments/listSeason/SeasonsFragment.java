@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import htl.gkr.f1statistics.R;
-import htl.gkr.f1statistics.fragments.listSeason.placeholder.PlaceholderContent;
+import htl.gkr.f1statistics.objects.Season;
 
 /**
  * A fragment representing a list of Items.
@@ -65,7 +65,7 @@ public class SeasonsFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MySeasonsRecyclerViewAdapter(PlaceholderContent.ITEMS));
+            recyclerView.setAdapter(new MySeasonsRecyclerViewAdapter(Season.ITEMS));
         }
         return view;
     }

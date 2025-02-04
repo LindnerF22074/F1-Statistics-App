@@ -13,7 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import htl.gkr.f1statistics.R;
-import htl.gkr.f1statistics.fragments.listRace.placeholder.PlaceholderContent;
+import htl.gkr.f1statistics.objects.Race;
 
 /**
  * A fragment representing a list of Items.
@@ -65,7 +65,7 @@ public class RacesFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new MyRacesRecyclerViewAdapter(PlaceholderContent.ITEMS));
+            recyclerView.setAdapter(new MyRacesRecyclerViewAdapter(Race.ITEMS));
         }
         return view;
     }

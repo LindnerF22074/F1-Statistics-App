@@ -9,13 +9,13 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import htl.gkr.f1statistics.R;
-import htl.gkr.f1statistics.databinding.FragmentRaceInfoBinding;
+import htl.gkr.f1statistics.databinding.FragmentFilterBinding;
 
-public class RaceInfoFragment extends Fragment {
-    FragmentRaceInfoBinding binding;
+public class FilterFragment extends Fragment {
 
+    FragmentFilterBinding binding;
 
-    public RaceInfoFragment() {
+    public FilterFragment() {
         // Required empty public constructor
     }
 
@@ -23,13 +23,16 @@ public class RaceInfoFragment extends Fragment {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding = FragmentRaceInfoBinding.inflate(inflater, container, false);
+        binding = FragmentFilterBinding.inflate(inflater, container, false);
+
+
+
+
         return binding.getRoot();
     }
 }

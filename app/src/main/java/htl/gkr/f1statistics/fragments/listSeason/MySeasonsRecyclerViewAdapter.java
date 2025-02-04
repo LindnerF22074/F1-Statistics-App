@@ -3,11 +3,10 @@ package htl.gkr.f1statistics.fragments.listSeason;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import htl.gkr.f1statistics.fragments.listSeason.placeholder.PlaceholderContent.PlaceholderItem;
+import htl.gkr.f1statistics.objects.Season.PlaceholderItem;
 import htl.gkr.f1statistics.databinding.FragmentSeasonsBinding;
 
 import java.util.List;
@@ -50,8 +49,8 @@ public class MySeasonsRecyclerViewAdapter extends RecyclerView.Adapter<MySeasons
 
         public ViewHolder(FragmentSeasonsBinding binding) {
             super(binding.getRoot());
-            mIdView = binding.itemNumber;
-            mContentView = binding.content;
+            mIdView = binding.textViewYear;
+            mContentView = binding.textViewYear;
         }
 
         @Override

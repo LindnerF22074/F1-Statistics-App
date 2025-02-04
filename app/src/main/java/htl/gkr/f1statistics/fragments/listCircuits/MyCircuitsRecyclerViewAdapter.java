@@ -3,24 +3,19 @@ package htl.gkr.f1statistics.fragments.listCircuits;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import htl.gkr.f1statistics.fragments.listCircuits.placeholder.PlaceholderContent.PlaceholderItem;
+import htl.gkr.f1statistics.objects.Circuit;
 import htl.gkr.f1statistics.databinding.FragmentCircuitsBinding;
 
 import java.util.List;
 
-/**
- * {@link RecyclerView.Adapter} that can display a {@link PlaceholderItem}.
- * TODO: Replace the implementation with code for your data type.
- */
 public class MyCircuitsRecyclerViewAdapter extends RecyclerView.Adapter<MyCircuitsRecyclerViewAdapter.ViewHolder> {
 
-    private final List<PlaceholderItem> mValues;
+    private final List<Circuit> mValues;
 
-    public MyCircuitsRecyclerViewAdapter(List<PlaceholderItem> items) {
+    public MyCircuitsRecyclerViewAdapter(List<Circuit> items) {
         mValues = items;
     }
 
@@ -34,8 +29,7 @@ public class MyCircuitsRecyclerViewAdapter extends RecyclerView.Adapter<MyCircui
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
+        holder.mContentView.setText(mValues.get(position).getCircuitName());
     }
 
     @Override
@@ -44,14 +38,12 @@ public class MyCircuitsRecyclerViewAdapter extends RecyclerView.Adapter<MyCircui
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        public final TextView mIdView;
         public final TextView mContentView;
-        public PlaceholderItem mItem;
+        public Circuit mItem;
 
         public ViewHolder(FragmentCircuitsBinding binding) {
             super(binding.getRoot());
-            mIdView = binding.itemNumber;
-            mContentView = binding.content;
+            mContentView = binding.textViewName;
         }
 
         @Override

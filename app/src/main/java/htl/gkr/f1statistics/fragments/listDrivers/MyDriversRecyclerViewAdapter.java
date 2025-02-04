@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import htl.gkr.f1statistics.fragments.listDrivers.placeholder.PlaceholderContent.PlaceholderItem;
+import htl.gkr.f1statistics.objects.Driver.PlaceholderItem;
 import htl.gkr.f1statistics.databinding.FragmentDriversBinding;
 
 import java.util.List;
