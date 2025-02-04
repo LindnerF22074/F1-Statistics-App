@@ -21,9 +21,7 @@ public class MyCircuitsRecyclerViewAdapter extends RecyclerView.Adapter<MyCircui
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         return new ViewHolder(FragmentCircuitsBinding.inflate(LayoutInflater.from(parent.getContext()), parent, false));
-
     }
 
     @Override

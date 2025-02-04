@@ -5,6 +5,8 @@ package htl.gkr.f1statistics;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
+import htl.gkr.f1statistics.objects.Circuit;
+
 public class MainViewModel extends ViewModel {
     public static final int START = 0;
     public static final int SEASONLIST = 1;

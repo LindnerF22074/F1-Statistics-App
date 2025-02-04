@@ -28,6 +28,7 @@ public class APIViewModel extends ViewModel {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        System.out.println(response);
                         listener.onSuccess(response);
                     }
                 }, new Response.ErrorListener() {

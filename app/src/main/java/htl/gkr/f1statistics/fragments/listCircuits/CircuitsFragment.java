@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import htl.gkr.f1statistics.API.APIViewModel;
+import htl.gkr.f1statistics.API.HttpListener;
 import htl.gkr.f1statistics.R;
 import htl.gkr.f1statistics.objects.Circuit;
 
@@ -55,6 +57,30 @@ public class CircuitsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_circuits_list, container, false);
+
+
+
+
+        APIViewModel apiViewModel = new APIViewModel();
+        apiViewModel.init(requireContext());
+        apiViewModel.requestString("https://api.jolpi.ca/ergast/f1/circuits/", new HttpListener<String>() {
+            @Override
+            public void onSuccess(String response) {
+                System.out.println(response);
+                Circuit.handleCircuitsJson(response);
+                System.out.println("Circuits: " + Circuit.CIRCUITS);
+            }
+
+            @Override
+            public void onError(String error) {
+                System.out.println(error);
+            }
+        });
+        System.out.println("Circuits: " + Circuit.CIRCUITS);
+
+
+
+
 
         // Set the adapter
         if (view instanceof RecyclerView) {

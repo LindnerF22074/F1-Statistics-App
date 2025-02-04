@@ -24,20 +24,18 @@ public class Circuit {
         this.circuitAltitude = circuitAltitude;
     }
 
-    public static void getCircuitsFromAPI(){
-        APIViewModel apiViewModel = new APIViewModel();
-        apiViewModel.requestString("https://api.jolpi.ca/ergast/f1/circuits/", new HttpListener<String>() {
-            @Override
-            public void onSuccess(String response) {
-                System.out.println(response);
-            }
 
-            @Override
-            public void onError(String error) {
-                System.out.println(error);
+    public static void handleCircuitsJson(String json) {
+        CIRCUITS.clear();
+        String[] lines = json.split("\n");
+        for (String line : lines) {
+            String[] parts = line.split(";");
+            if (parts.length == 5) {
+                CIRCUITS.add(new Circuit(Integer.parseInt(parts[0]), parts[1], parts[2], parts[3], parts[4]));
             }
-        });
+        }
     }
+
 
     public int getCircuitId() {
         return circuitId;
@@ -45,5 +43,12 @@ public class Circuit {
 
     public String  getCircuitName() {
         return circuitName;
+    }
+
+    public static List<Circuit> getCircuits() {
+        return CIRCUITS;
+    }
+    public static void setCircuits(List<Circuit> circuits) {
+        CIRCUITS = circuits;
     }
 }
